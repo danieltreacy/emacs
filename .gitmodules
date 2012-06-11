@@ -1,0 +1,18 @@
+[submodule "vendor/magit"]
+	path = vendor/magit
+	url = git://github.com/technomancy/magit.git
+[submodule "vendor/yaml-mode"]
+	path = vendor/yaml-mode
+	url = git://github.com/yoshiki/yaml-mode.git
+[submodule "vendor/markdown-mode"]
+	path = vendor/markdown-mode
+	url = git://github.com/defunkt/markdown-mode.git
+[submodule "vendor/scss-mode"]
+	path = vendor/scss-mode
+	url = https://github.com/antonj/scss-mode
+[submodule "vendor/color-theme-solarized"]
+	path = vendor/color-theme-solarized
+	url = https://github.com/sellout/emacs-color-theme-solarized
+[submodule "vendor/scala-mode"]
+	path = vendor/scala-mode
+	url = https://github.com/haxney/scala-mode

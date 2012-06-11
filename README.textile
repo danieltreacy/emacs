@@ -1,0 +1,7 @@
+h1. Daniel's Emacs
+
+These are my Emacs files. They're composed of bits and pieces taken from various others' Emacs config files.
+
+h2. Specific customisations
+
+I'll add here as they come up...
