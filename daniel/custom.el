@@ -70,3 +70,9 @@
   '((emacs-lisp-mode . lisp-complete-symbol)
     (text-mode . dabbrev-completion)
     (clojure-mode . slime-complete-symbol))
+
+;; disable backing up files
+(setq backup-inhibited t)
+
+;; magit stuff
+(autoload 'magit-status "magit" nil t)
