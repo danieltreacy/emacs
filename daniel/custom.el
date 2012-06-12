@@ -62,3 +62,11 @@
 (setq scroll-conservatively 10000
   scroll-step 1)
 
+; smart-tab
+(require 'smart-tab)
+(global-smart-tab-mode 1)
+(setq smart-tab-using-hippie-expand nil)
+(setq smart-tab-completion-functions-alist
+  '((emacs-lisp-mode . lisp-complete-symbol)
+    (text-mode . dabbrev-completion)
+    (clojure-mode . slime-complete-symbol))

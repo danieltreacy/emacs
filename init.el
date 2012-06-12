@@ -14,6 +14,7 @@
 (vendor 'coffee-mode)
 (vendor 'scss-mode)
 (vendor 'scala-mode)
+(vendor 'smart-tab)
 (vendor 'color-theme)
 (vendor 'color-theme-solarized)
 
