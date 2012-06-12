@@ -69,7 +69,7 @@
 (setq smart-tab-completion-functions-alist
   '((emacs-lisp-mode . lisp-complete-symbol)
     (text-mode . dabbrev-completion)
-    (clojure-mode . slime-complete-symbol))
+    (clojure-mode . slime-complete-symbol)))
 
 ;; disable backing up files
 (setq backup-inhibited t)
