@@ -34,8 +34,8 @@
  '(diff-removed ((t (:foreground "#de1923")))))
 
 ; pretty magit diffs (based on colors for diff-mode above)
-(set-face-attribute 'magit-diff-add nil :foreground "#559944")
-(set-face-attribute 'magit-diff-del nil :foreground "#de1923")
-(set-face-attribute 'magit-diff-file-header nil :foreground "RoyalBlue1")
-(set-face-attribute 'magit-diff-hunk-header nil :foreground "#fbde2d")
-(set-face-attribute 'magit-item-highlight nil :background "black")
+;(set-face-attribute 'magit-diff-add nil :foreground "#559944")
+;(set-face-attribute 'magit-diff-del nil :foreground "#de1923")
+;(set-face-attribute 'magit-diff-file-header nil :foreground "RoyalBlue1")
+;(set-face-attribute 'magit-diff-hunk-header nil :foreground "#fbde2d")
+;(set-face-attribute 'magit-item-highlight nil :background "black")
