@@ -9,6 +9,10 @@
 
 ;; add vendor packages
 (vendor 'magit)
+(vendor 'jump)
+(vendor 'inf-ruby)
+;(vendor 'rinari)
+(vendor 'ruby-hacks)
 (vendor 'textile-mode)
 (vendor 'yaml-mode)
 (vendor 'coffee-mode)
@@ -22,3 +26,4 @@
 (load "daniel/custom")
 (load "daniel/keys")
 (load "daniel/theme")
+(load "daniel/ruby")

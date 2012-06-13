@@ -19,3 +19,12 @@
 [submodule "vendor/smart-tab"]
 	path = vendor/smart-tab
 	url = https://github.com/genehack/smart-tab
+[submodule "vendor/inf-ruby"]
+	path = vendor/inf-ruby
+	url = https://github.com/nonsequitur/inf-ruby.git
+[submodule "vendor/rinari"]
+	path = vendor/rinari
+	url = https://github.com/eschulte/rinari
+[submodule "vendor/jump"]
+	path = vendor/jump
+	url = https://github.com/eschulte/jump.el
