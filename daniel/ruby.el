@@ -1,8 +1,8 @@
 ; rinari
-(setq rinari-tags-file-name "TAGS")
-(add-hook 'rinari-minor-mode-hook
-          (lambda ()
-            (define-key rinari-minor-mode-map (kbd "A-r") 'rinari-test)))
+;(setq rinari-tags-file-name "TAGS")
+;(add-hook 'rinari-minor-mode-hook
+;          (lambda ()
+;            (define-key rinari-minor-mode-map (kbd "A-r") 'rinari-test)))
 
 ; rhtml
 (setq auto-mode-alist (cons '("\\.html\\.erb" . nxml-mode) auto-mode-alist))

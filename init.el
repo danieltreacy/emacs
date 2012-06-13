@@ -9,10 +9,10 @@
 
 ;; add vendor packages
 (vendor 'magit)
-(vendor 'jump)
-(vendor 'inf-ruby)
+;(vendor 'jump)
+;(vendor 'inf-ruby)
 ;(vendor 'rinari)
-(vendor 'ruby-hacks)
+;(vendor 'ruby-hacks)
 (vendor 'textile-mode)
 (vendor 'yaml-mode)
 (vendor 'coffee-mode)
