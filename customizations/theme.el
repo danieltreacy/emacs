@@ -9,9 +9,8 @@
 (push 'fontify-frame after-make-frame-functions)
 
 (require 'color-theme)
-(require 'color-theme-solarized)
 
-(color-theme-solarized-dark)
+(color-theme-charcoal-black)
 
 ;; sundry colors taken from https://github.com/al3x/emacs
 ;; thanks alex

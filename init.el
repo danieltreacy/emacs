@@ -19,5 +19,5 @@
 (load "prelude-packages")
 
 (load "customizations/keys")
-(load "customizations/theme")
 (load "customizations/editing")
+(load "customizations/theme")

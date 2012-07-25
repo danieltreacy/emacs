@@ -50,7 +50,7 @@
 (blink-cursor-mode t)
 
 ; highlight current line
-(global-hl-line-mode t)
+(global-hl-line-mode nil)
 
 ; force new frames into existing window
 (setq ns-pop-up-frames nil)
