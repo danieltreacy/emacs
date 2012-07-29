@@ -4,7 +4,9 @@
 ;; load paths
 (add-to-list 'load-path "~/.emacs.d/")
 (add-to-list 'load-path "~/.emacs.d/customizations")
-;;(add-to-list 'load-path "~/.emacs.d/vendor")
+(add-to-list 'load-path "~/.emacs.d/vendor/ensime/ensime_2.9.1-0.7.6/elisp/")
+
+(require 'ensime)
 
 ;; packages
 (require 'package)
@@ -18,6 +20,7 @@
 ;; run emacs prelude to install missing packages
 (load "prelude-packages")
 
+(load "customizations/ensime")
 (load "customizations/keys")
 (load "customizations/editing")
 (load "customizations/theme")
