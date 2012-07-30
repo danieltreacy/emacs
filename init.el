@@ -1,3 +1,5 @@
+(setq debug-on-error t)
+
 ;; common lisp support
 (require 'cl)
 
@@ -6,7 +8,39 @@
 (add-to-list 'load-path "~/.emacs.d/customizations")
 (add-to-list 'load-path "~/.emacs.d/vendor/ensime/ensime_2.9.1-0.7.6/elisp/")
 
+(add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/jde/lisp"))
+(add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/eieio"))
+(add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/cedet/common"))
+(add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/elib"))
+
+;; load cedet packages
+(load-file (expand-file-name "~/.emacs.d/vendor/cedet/common/cedet.el"))
+
+;; ensime
 (require 'ensime)
+
+;; jde
+;; defer loading the JDE until a java file is opened
+(setq defer-loading-jde t)
+
+(if defer-loading-jde
+    (progn
+      (autoload 'jde-mode "jde" "JDE mode." t)
+      (setq auto-mode-alist
+	    (append
+	     '(("\\.java\\'" . jde-mode))
+	     auto-mode-alist)))
+  (require 'jde)
+  (defun screen-width nil -1)
+  (define-obsolete-function-alias 'make-local-hook 'ignore "21.1")
+  )
+
+;; Sets the basic indentation for Java source files
+;; to two spaces.
+(defun my-jde-mode-hook ()
+  (setq c-basic-offset 2))
+
+(add-hook 'jde-mode-hook 'my-jde-mode-hook)
 
 ;; packages
 (require 'package)
