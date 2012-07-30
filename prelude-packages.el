@@ -2,7 +2,8 @@
   '(ack-and-a-half clojure-mode coffee-mode expand-region gist haml-mode
 		   inf-ruby magit magithub markdown-mode paredit python
                    rinari ruby-mode sass-mode scala-mode scss-mode smart-tab
-		   solarized-theme volatile-highlights yaml-mode yari zenburn-theme)
+		   solarized-theme volatile-highlights yaml-mode yari zenburn-theme
+		   php-mode)
   "A list of packages to ensure are installed at launch.")
 
 (defun prelude-packages-installed-p ()
