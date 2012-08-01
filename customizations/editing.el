@@ -6,6 +6,14 @@
   (remq 'process-kill-buffer-query-function
          kill-buffer-query-functions))
 
+; use ibuffer instead
+(defalias 'list-buffers 'ibuffer)
+
+; ido mode
+(setq ido-enable-flex-matching t)
+(setq ido-everywhere t)
+(ido-mode 1)
+
 ; tabs and indentation
 (setq c-basic-indent 2)
 (setq tab-width 4)
@@ -72,7 +80,16 @@
     (clojure-mode . slime-complete-symbol)))
 
 ;; disable backing up files
-(setq backup-inhibited t)
+(setq make-backup-files nil) ; stop creating those backup~ files
+(setq auto-save-default nil) ; stop creating those #autosave# files
 
 ;; magit stuff
 (autoload 'magit-status "magit" nil t)
+
+;; markdown mode hook
+(defun set-markdown-mode ()
+  (when (and (stringp buffer-file-name)
+             (string-match "\\.md\\'" buffer-file-name))
+    (markdown-mode)))
+
+(add-hook 'find-file-hook 'set-markdown-mode)
