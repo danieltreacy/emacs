@@ -46,7 +46,7 @@
 (setq delete-by-moving-to-trash t)
 
 ; don't display startup message
-(setq inhibit-startup-message t)
+(setq initial-buffer-choice "~/.emacs.d/init.el")
 
 ; no scrollbar
 (scroll-bar-mode -1)
