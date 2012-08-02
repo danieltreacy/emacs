@@ -8,6 +8,7 @@
 
 ; backwards word kill
 (global-set-key "\C-w" 'backward-kill-word)
+(global-set-key "\C-q" 'kill-word)
 (global-set-key "\C-x\C-k" 'kill-region)
 (global-set-key "\C-c\C-k" 'kill-region)
 
@@ -29,3 +30,9 @@
 
 ; open init.el in emacs home
 (global-set-key (kbd "<f7>") 'open-emacs-config)
+
+; MODE SPECIFIC KEY BINDINGS
+
+;; markdown mode
+(eval-after-load 'markdown-mode
+  '(define-key markdown-mode-map (kbd "C-x t") 'markdown-insert-title))
