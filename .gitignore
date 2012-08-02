@@ -9,3 +9,4 @@ vendor/nav/.hg/
 .ensime
 ac-comphist.dat
 elpa/
+/url/cookies
