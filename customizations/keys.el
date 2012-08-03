@@ -2,6 +2,10 @@
 (global-set-key (kbd "C-'") 'next-multiframe-window)
 (global-set-key (kbd "C-;") 'previous-multiframe-window)
 
+; paragraph navigation
+(global-set-key (kbd "C-.") 'forward-paragraph)
+(global-set-key (kbd "C-,") 'backward-paragraph)
+
 ; overload META key
 (global-set-key "\C-x\C-m" 'execute-extended-command)
 (global-set-key "\C-c\C-m" 'execute-extended-command)
