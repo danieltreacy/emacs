@@ -10,6 +10,9 @@
 (global-set-key "\C-x\C-m" 'execute-extended-command)
 (global-set-key "\C-c\C-m" 'execute-extended-command)
 
+; backward remove character
+(global-set-key (kbd "C-l") 'backward-delete-char-untabify)
+
 ; backwards word kill
 (global-set-key "\C-w" 'backward-kill-word)
 (global-set-key "\C-q" 'kill-word)

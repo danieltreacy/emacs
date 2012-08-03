@@ -44,8 +44,7 @@
 	     auto-mode-alist)))
   (require 'jde)
   (defun screen-width nil -1)
-  (define-obsolete-function-alias 'make-local-hook 'ignore "21.1")
-  )
+  (define-obsolete-function-alias 'make-local-hook 'ignore "21.1"))
 
 ;; Sets the basic indentation for Java source files
 ;; to two spaces.
@@ -53,8 +52,6 @@
   (setq c-basic-offset 2))
 
 (add-hook 'jde-mode-hook 'my-jde-mode-hook)
-
-
 
 ;; packages
 (require 'package)
