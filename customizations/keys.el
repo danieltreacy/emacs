@@ -1,6 +1,6 @@
 ; Use shift-right arrow to move to next buffer
-(global-set-key (kbd "S-s-<right>") 'next-multiframe-window)
-(global-set-key (kbd "S-s-<left>") 'previous-multiframe-window)
+(global-set-key (kbd "C-'") 'next-multiframe-window)
+(global-set-key (kbd "C-;") 'previous-multiframe-window)
 
 ; overload META key
 (global-set-key "\C-x\C-m" 'execute-extended-command)
