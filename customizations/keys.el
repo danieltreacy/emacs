@@ -11,7 +11,8 @@
 (global-set-key "\C-c\C-m" 'execute-extended-command)
 
 ; backward remove character
-(global-set-key (kbd "C-l") 'backward-delete-char-untabify)
+(global-set-key (kbd "C-d") 'backward-delete-char)
+(global-set-key (kbd "M-d") 'delete-char)
 
 ; backwards word kill
 (global-set-key "\C-w" 'backward-kill-word)
