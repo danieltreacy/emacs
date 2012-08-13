@@ -3,7 +3,7 @@
 		   inf-ruby magit magithub markdown-mode paredit python
                    rinari ruby-mode sass-mode scala-mode scss-mode smart-tab
 		   solarized-theme volatile-highlights yaml-mode yari zenburn-theme
-		   php-mode project-mode)
+		   php-mode project-mode swank-clojure)
   "A list of packages to ensure are installed at launch.")
 
 (defun prelude-packages-installed-p ()
