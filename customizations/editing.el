@@ -93,3 +93,17 @@
     (markdown-mode)))
 
 (add-hook 'find-file-hook 'set-markdown-mode)
+
+;; scss mode customizations
+;; Hide *compilation* buffer if compile didn't give erros
+(defadvice compilation-start (before aj-compilation-save-window-configuration(command comint))
+  "Save window configuration before compilation in
+`aj-compilation-saved-window-configuration'"
+
+  ;; compile command is not saved in compilation-start function only in
+  ;; compile function (rgrep only uses compilation-start)
+  (setq aj-compile-command command)
+  ;; Save window configuration
+  (setq aj-compilation-saved-window-configuration
+        (current-window-configuration)))
+(ad-activate 'compilation-start)
