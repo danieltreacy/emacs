@@ -14,6 +14,10 @@
 (global-set-key (kbd "C-d") 'backward-delete-char)
 (global-set-key (kbd "M-d") 'delete-char)
 
+; override forward symbol
+(global-set-key (kbd "M-f") 'forward-sexp)
+(global-set-key (kbd "M-b") 'backward-sexp)
+
 ; backwards word kill
 (global-set-key "\C-w" 'backward-kill-word)
 (global-set-key "\C-q" 'kill-word)
