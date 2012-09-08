@@ -9,21 +9,19 @@
 ;; common lisp support
 (require 'cl)
 
-;; set paths
-(when (equal system-type 'darwin)
-  (setenv "PATH" (concat "/opt/local/bin:/usr/local/bin:" (getenv "PATH")))
-  (push "/opt/local/bin" exec-path))
-
 ;; load paths
 (add-to-list 'load-path "~/.emacs.d/")
 (add-to-list 'load-path "~/.emacs.d/customizations")
 (add-to-list 'load-path "~/.emacs.d/vendor/ensime/ensime_2.9.1-0.7.6/elisp/")
-(add-to-list 'load-path "~/.emacs.d/vendor/mew-6.5/")
 
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/jde/lisp"))
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/eieio"))
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/cedet/common"))
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/elib"))
+(load "customizations/functions")
+
+;; load path and exec-path from system $PATH
+(set-exec-path-from-shell-PATH)
 
 ;; load cedet packages
 (load-file (expand-file-name "~/.emacs.d/vendor/cedet/common/cedet.el"))

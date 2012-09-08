@@ -27,6 +27,9 @@
 ; magit
 (global-set-key (kbd "<f8>") 'magit-status)
 
+; nrepl
+(global-set-key (kbd "<f10>") 'nrepl-jack-in)
+
 ; fullscreen!
 (global-set-key [(super return)] 'ns-toggle-fullscreen)
 
