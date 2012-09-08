@@ -1,6 +1,6 @@
 ; nice font
 (defun fontify-frame (frame)
-  (set-frame-parameter frame 'font "Deja-Vu-Sans-Mono-12"))
+  (set-frame-parameter frame 'font "Deja-Vu-Sans-Mono-14"))
 
 ; fontify current frame
 (fontify-frame nil)
