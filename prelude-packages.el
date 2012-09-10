@@ -3,7 +3,7 @@
 		   inf-ruby magit magithub markdown-mode paredit python
                    ruby-mode sass-mode scala-mode scss-mode smart-tab
 		   solarized-theme volatile-highlights yaml-mode yari zenburn-theme
-		   php-mode project-mode nrepl)
+		   php-mode project-mode nrepl haskell-mode)
   "A list of packages to ensure are installed at launch.")
 
 (defun prelude-packages-installed-p ()
