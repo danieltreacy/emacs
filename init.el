@@ -18,16 +18,36 @@
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/eieio"))
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/cedet/common"))
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/elib"))
+(add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/molokai"))
+(add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/scala-mode2"))
+(add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/textmate"))
+
 (load "customizations/functions")
 
 ;; load path and exec-path from system $PATH
 (set-exec-path-from-shell-PATH)
 
+(defadvice rspec-compile (around rspec-compile-around)
+  "Use BASH shell for running the specs because of ZSH issues."
+  (let ((shell-file-name "/bin/bash"))
+    ad-do-it))
+(ad-activate 'rspec-compile)
+
+;; lod rbenv from path
+(set-rbenv-path)
+
 ;; load cedet packages
 (load-file (expand-file-name "~/.emacs.d/vendor/cedet/common/cedet.el"))
 
+;; textmate mode
+(require 'textmate)
+(textmate-mode)
+
 ;; ensime
 (require 'ensime)
+
+;; scala-mode
+(require 'scala-mode)
 
 ;; jde
 ;; defer loading the JDE until a java file is opened

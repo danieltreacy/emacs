@@ -1,6 +1,6 @@
 ; nice font
 (defun fontify-frame (frame)
-  (set-frame-parameter frame 'font "Deja-Vu-Sans-Mono-14"))
+  (set-frame-parameter frame 'font "Source Code Pro 12"))
 
 ; fontify current frame
 (fontify-frame nil)
@@ -8,11 +8,21 @@
 ; fontify any future frames
 (push 'fontify-frame after-make-frame-functions)
 
-;(require 'color-theme)
+(require 'color-theme)
+
+;(color-theme-clarity)
+;(load-file "~/.emacs.d/vendor/molokai/molokai.el")
+;(color-theme-molokai)
 
 ;(color-theme-charcoal-black)
 
-(load-theme 'zenburn t)
+;(load-theme 'zenburn t)
+
+;(load-theme 'solarized-dark t)
+
+;(color-theme-sons-of-obsidian)
+
+(load-file "~/.emacs.d/vendor/tomorrow-theme/tomorrow-night-theme.el")
 
 ;; sundry colors taken from https://github.com/al3x/emacs
 ;; thanks alex

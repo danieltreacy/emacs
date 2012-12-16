@@ -10,6 +10,10 @@
 (global-set-key "\C-x\C-m" 'execute-extended-command)
 (global-set-key "\C-c\C-m" 'execute-extended-command)
 
+; comment and uncomment region
+(global-set-key (kbd "s-/") 'comment-region)
+(global-set-key (kbd "s-.") 'uncomment-region)
+
 ; backward remove character
 (global-set-key (kbd "C-d") 'backward-delete-char)
 (global-set-key (kbd "M-d") 'delete-char)
@@ -32,6 +36,10 @@
 
 ; fullscreen!
 (global-set-key [(super return)] 'ns-toggle-fullscreen)
+
+; indent region
+(global-set-key (kbd "s-]") 'indent-region)
+
 
 ;; indent whole buffer
 (defun iwb ()

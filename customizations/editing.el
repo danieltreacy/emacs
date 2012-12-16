@@ -9,6 +9,9 @@
 ; use ibuffer instead
 (defalias 'list-buffers 'ibuffer)
 
+; ruby-electric mode for ruby-mode
+(add-hook 'ruby-mode-hook 'ruby-electric-mode)
+
 ; ido mode
 (setq ido-enable-flex-matching t)
 (setq ido-everywhere t)
