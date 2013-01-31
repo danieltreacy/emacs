@@ -11,6 +11,11 @@
 
 ; ruby-electric mode for ruby-mode
 (add-hook 'ruby-mode-hook 'ruby-electric-mode)
+; ruby 1.9 hash syntax highlighting
+(font-lock-add-keywords
+ 'ruby-mode
+ '(("\\(\\b\\sw[_a-zA-Z0-9]*:\\)\\(?:\\s-\\|$\\)" (1 font-lock-constant-face))))
+
 
 ; ido mode
 (setq ido-enable-flex-matching t)
