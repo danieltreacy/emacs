@@ -47,7 +47,7 @@
 (require 'ensime)
 
 ;; scala-mode
-(require 'scala-mode)
+(require 'scala-mode2)
 
 ;; jde
 ;; defer loading the JDE until a java file is opened
