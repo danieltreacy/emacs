@@ -40,6 +40,9 @@
 ; indent region
 (global-set-key (kbd "s-]") 'indent-region)
 
+; rename buffer
+(global-set-key (kbd "<f6>") 'rename-buffer)
+
 
 ;; indent whole buffer
 (defun iwb ()
