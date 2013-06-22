@@ -1,6 +1,6 @@
 ; nice font
 (defun fontify-frame (frame)
-  (set-frame-parameter frame 'font "Source Code Pro 14"))
+  (set-frame-parameter frame 'font "Consolas 13"))
 
 ; fontify current frame
 (fontify-frame nil)
@@ -14,15 +14,23 @@
 ;(load-file "~/.emacs.d/vendor/molokai/molokai.el")
 ;(color-theme-molokai)
 
-;(color-theme-charcoal-black)
+;(load-file "~/.emacs.d/vendor/color-theme-github/color-theme-github.el")
+
+;(color-theme-github)
 
 ;(load-theme 'zenburn t)
+
+;(color-theme-charcoal-black)
 
 ;(load-theme 'solarized-dark t)
 
 ;(color-theme-sons-of-obsidian)
 
-(load-file "~/.emacs.d/vendor/tomorrow-theme/tomorrow-night-theme.el")
+;(load-file "~/.emacs.d/vendor/tomorrow-theme/tomorrow-night-theme.el")
+
+(load-file "~/.emacs.d/elpa/color-theme-heroku-1.0.0/color-theme-heroku.el")
+
+(color-theme-heroku)
 
 ;; sundry colors taken from https://github.com/al3x/emacs
 ;; thanks alex

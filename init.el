@@ -13,6 +13,7 @@
 (add-to-list 'load-path "~/.emacs.d/")
 (add-to-list 'load-path "~/.emacs.d/customizations")
 (add-to-list 'load-path "~/.emacs.d/vendor/ensime/ensime_2.9.1-0.7.6/elisp/")
+(add-to-list 'load-path "~/.emacs.d/vendor/malabar-1.5/lisp")
 
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/jde/lisp"))
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/eieio"))
@@ -36,8 +37,21 @@
 ;; lod rbenv from path
 (set-rbenv-path)
 
+;; load rsense
+(setq rsense-home "/Users/daniel/bin/rsense-0.3")
+(add-to-list 'load-path (concat rsense-home "/etc"))
+(require 'rsense)
+
+;; yaml mode
+(load-file (expand-file-name "~/.emacs.d/elpa/yaml-mode-0.0.7/yaml-mode.el"))
+(require 'yaml-mode)
+
 ;; load cedet packages
 (load-file (expand-file-name "~/.emacs.d/vendor/cedet/common/cedet.el"))
+(semantic-load-enable-minimum-features) ;; or enable more if you wish
+(require 'malabar-mode)
+(setq malabar-groovy-lib-dir "~/.emacs.d/vendor/malabar-1.5/lib")
+(add-to-list 'auto-mode-alist '("\\.java\\'" . malabar-mode))
 
 ;; textmate mode
 (require 'textmate)
@@ -48,28 +62,6 @@
 
 ;; scala-mode
 (require 'scala-mode2)
-
-;; jde
-;; defer loading the JDE until a java file is opened
-(setq defer-loading-jde t)
-
-(if defer-loading-jde
-    (progn
-      (autoload 'jde-mode "jde" "JDE mode." t)
-      (setq auto-mode-alist
-	    (append
-	     '(("\\.java\\'" . jde-mode))
-	     auto-mode-alist)))
-  (require 'jde)
-  (defun screen-width nil -1)
-  (define-obsolete-function-alias 'make-local-hook 'ignore "21.1"))
-
-;; Sets the basic indentation for Java source files
-;; to two spaces.
-(defun my-jde-mode-hook ()
-  (setq c-basic-offset 2))
-
-(add-hook 'jde-mode-hook 'my-jde-mode-hook)
 
 ;; packages
 (require 'package)

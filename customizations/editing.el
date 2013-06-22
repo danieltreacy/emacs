@@ -16,6 +16,13 @@
  'ruby-mode
  '(("\\(\\b\\sw[_a-zA-Z0-9]*:\\)\\(?:\\s-\\|$\\)" (1 font-lock-constant-face))))
 
+;; Complete by C-c .
+(add-hook 'ruby-mode-hook
+      (lambda ()
+	(local-set-key (kbd "C-c .") 'ac-complete-rsense)))
+
+; prevent scss compile-on-save
+(setq scss-compile-at-save nil)
 
 ; ido mode
 (setq ido-enable-flex-matching t)
@@ -23,9 +30,14 @@
 (ido-mode 1)
 
 ; tabs and indentation
+
 (setq c-basic-indent 2)
-(setq tab-width 4)
-(setq indent-tabs-mode nil)
+(setq tab-width 2)
+(setq-default indent-tabs-mode nil)
+(setq-default tab-width 2)
+
+; line spacing
+(setq-default line-spacing 5)
 
 ; whitespace
 ;(global-whitespace-mode t)
