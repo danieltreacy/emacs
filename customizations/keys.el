@@ -1,6 +1,8 @@
 ; Use shift-right arrow to move to next buffer
 (global-set-key (kbd "C-'") 'next-multiframe-window)
 (global-set-key (kbd "C-;") 'previous-multiframe-window)
+(global-set-key (kbd "M-'") 'next-multiframe-window)
+(global-set-key (kbd "M-;") 'previous-multiframe-window)
 
 ; paragraph navigation
 (global-set-key (kbd "C-.") 'forward-paragraph)
