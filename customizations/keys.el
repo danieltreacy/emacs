@@ -5,6 +5,8 @@
 ; paragraph navigation
 (global-set-key (kbd "C-.") 'forward-paragraph)
 (global-set-key (kbd "C-,") 'backward-paragraph)
+(global-set-key (kbd "M-.") 'forward-paragraph)
+(global-set-key (kbd "M-,") 'backward-paragraph)
 
 ; overload META key
 (global-set-key "\C-x\C-m" 'execute-extended-command)
