@@ -43,8 +43,8 @@
 (require 'rsense)
 
 ;; yaml mode
-(load-file (expand-file-name "~/.emacs.d/elpa/yaml-mode-0.0.7/yaml-mode.el"))
-(require 'yaml-mode)
+;;(load-file (expand-file-name "~/.emacs.d/elpa/yaml-mode-0.0.7/yaml-mode.el"))
+;;(require 'yaml-mode)
 
 ;; load cedet packages
 (load-file (expand-file-name "~/.emacs.d/vendor/cedet/common/cedet.el"))

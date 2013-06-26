@@ -1,6 +1,11 @@
 ; pick up changes to files on disk automatically (ie, after git pull)
 (global-auto-revert-mode 1)
 
+;; use autopair
+(add-to-list 'load-path "~/.emacs.d/vendor/autopair") ;; comment if autopair.el is in standard load path
+(require 'autopair)
+(autopair-global-mode) ;; enable autopair in all buffers
+
 ; yes, I want to kill buffers with processes attached
 (setq kill-buffer-query-functions
   (remq 'process-kill-buffer-query-function
@@ -9,12 +14,19 @@
 ; use ibuffer instead
 (defalias 'list-buffers 'ibuffer)
 
+; use shift-select-mode
+(setq shift-select-mode t)
+
+; use cua mode
+(cua-mode t)
+
 ; ruby-electric mode for ruby-mode
 (add-hook 'ruby-mode-hook 'ruby-electric-mode)
 ; ruby 1.9 hash syntax highlighting
 (font-lock-add-keywords
  'ruby-mode
  '(("\\(\\b\\sw[_a-zA-Z0-9]*:\\)\\(?:\\s-\\|$\\)" (1 font-lock-constant-face))))
+
 
 ;; Complete by C-c .
 (add-hook 'ruby-mode-hook
