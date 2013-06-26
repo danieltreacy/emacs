@@ -26,11 +26,11 @@
 
 ;(color-theme-sons-of-obsidian)
 
-;(load-file "~/.emacs.d/vendor/tomorrow-theme/tomorrow-night-theme.el")
+(load-file "~/.emacs.d/vendor/tomorrow-theme/tomorrow-night-theme.el")
 
-(load-file "~/.emacs.d/elpa/color-theme-heroku-1.0.0/color-theme-heroku.el")
+;(load-file "~/.emacs.d/elpa/color-theme-heroku-1.0.0/color-theme-heroku.el")
 
-(color-theme-heroku)
+;(color-theme-heroku)
 
 ;; sundry colors taken from https://github.com/al3x/emacs
 ;; thanks alex

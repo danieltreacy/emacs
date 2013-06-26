@@ -10,6 +10,18 @@
 (global-set-key (kbd "M-.") 'forward-paragraph)
 (global-set-key (kbd "M-,") 'backward-paragraph)
 
+; gotoline
+(global-set-key (kbd "M-l") 'goto-line)
+
+; textmate indentation shifting using meta key
+(global-set-key (kbd "M-]") 'textmate-shift-right)
+(global-set-key (kbd "M-[") 'textmate-shift-left)
+
+; kill-yank for non-X11/OS X environments
+(global-set-key (kbd "M-z") 'clipboard-kill-region)
+(global-set-key (kbd "M-a") 'clipboard-kill-ring-save)
+(global-set-key (kbd "M-q") 'clipboard-yank)
+
 ; overload META key
 (global-set-key "\C-x\C-m" 'execute-extended-command)
 (global-set-key "\C-c\C-m" 'execute-extended-command)
