@@ -20,6 +20,18 @@
 ; use cua mode
 (cua-mode t)
 
+; use autopair
+(add-to-list 'load-path "~/.emacs.d/vendor/autopair") ;; comment if autopair.el is in standard load path
+(require 'autopair)
+(autopair-global-mode) ;; enable autopair in all buffers
+
+(add-hook 'ruby-mode-hook '(lambda ()
+                               ;; make ruby-electric play nice with autopair
+                               (substitute-key-definition 'ruby-electric-curlies nil ruby-mode-map)
+                               (substitute-key-definition 'ruby-electric-matching-char nil ruby-mode-map)
+                               (substitute-key-definition 'ruby-electric-close-matching-char nil ruby-mode-map)))
+
+
 ; ruby-electric mode for ruby-mode
 (add-hook 'ruby-mode-hook 'ruby-electric-mode)
 ; ruby 1.9 hash syntax highlighting
