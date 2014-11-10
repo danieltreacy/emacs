@@ -22,6 +22,8 @@
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/molokai"))
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/scala-mode2"))
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/textmate"))
+(add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/textmate"))
+(add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/multiple-cursors"))
 
 (load "customizations/functions")
 
@@ -63,14 +65,18 @@
 ;; scala-mode
 (require 'scala-mode2)
 
+;; multiple cursors
+;;(load-file (expand-file-name "~/.emacs.d/vendor/multiple-cursors/multiple-cursors.el"))
+(require 'multiple-cursors)
+
 ;; packages
 (require 'package)
 (package-initialize)
 
 ;; add package sources
 (add-to-list 'package-archives '("elpa" . "http://tromey.com/elpa/"))
-(add-to-list 'package-archives
-             '("marmalade" . "http://marmalade-repo.org/packages/") t)
+(add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/") t)
+(add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
 
 ;; run emacs prelude to install missing packages
 (load "prelude-packages")
@@ -84,7 +90,9 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(custom-safe-themes (quote ("8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" default))))
+ '(custom-safe-themes
+   (quote
+    ("a1493957ee779057acdc4c337133f217dd7b2edfdeeffed903ba2f16246f665a" "5bd5af0deb1ab0e2c1b9c54d94a3f030529b6c7034fdf0d3cc4b0e7e0338cb91" "30fe7e72186c728bd7c3e1b8d67bc10b846119c45a0f35c972ed427c45bacc19" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" default))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -101,3 +109,5 @@
  '(diff-removed ((t (:foreground "#de1923"))))
  '(flymake-errline ((t :underline "red")))
  '(flymake-warnline ((t :underline "green"))))
+
+(load-file "~/.emacs.d/elpa/magit-1.2.0/magit.el")

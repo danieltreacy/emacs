@@ -13,6 +13,9 @@
 ; gotoline
 (global-set-key (kbd "M-l") 'goto-line)
 
+; multiple cursors
+(global-set-key (kbd "C-<") 'mc/mark-all-like-this)
+
 ; textmate indentation shifting using meta key
 (global-set-key (kbd "M-]") 'textmate-shift-right)
 (global-set-key (kbd "M-[") 'textmate-shift-left)
@@ -56,9 +59,11 @@
 ; indent region
 (global-set-key (kbd "s-]") 'indent-region)
 
-; rename buffer
-(global-set-key (kbd "<f6>") 'rename-buffer)
+; kill all other buffers except current
+(global-set-key (kbd "<f6>") 'kill-other-buffers)
 
+; clear textmate-mode cache
+(global-set-key (kbd "<f5>") 'textmate-clear-cache)
 
 ;; indent whole buffer
 (defun iwb ()

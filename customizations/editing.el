@@ -1,6 +1,11 @@
 ; pick up changes to files on disk automatically (ie, after git pull)
 (global-auto-revert-mode 1)
 
+; show clock in status bar
+(setq display-time-day-and-date t
+      display-time-24hr-format t)
+(display-time)
+
 ;; use autopair
 (add-to-list 'load-path "~/.emacs.d/vendor/autopair") ;; comment if autopair.el is in standard load path
 (require 'autopair)
