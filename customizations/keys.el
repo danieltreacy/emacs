@@ -10,6 +10,9 @@
 (global-set-key (kbd "M-.") 'forward-paragraph)
 (global-set-key (kbd "M-,") 'backward-paragraph)
 
+; switch window splits
+(global-set-key (kbd "C-x |") 'toggle-window-split)
+
 ; gotoline
 (global-set-key (kbd "M-l") 'goto-line)
 
@@ -29,6 +32,12 @@
 (global-set-key "\C-x\C-m" 'execute-extended-command)
 (global-set-key "\C-c\C-m" 'execute-extended-command)
 
+; projectile shortcuts
+(define-key projectile-mode-map [?\s-d] 'projectile-find-dir)
+(define-key projectile-mode-map [?\s-p] 'projectile-switch-project)
+(define-key projectile-mode-map [?\s-f] 'projectile-find-file)
+(define-key projectile-mode-map [?\s-g] 'projectile-grep)
+
 ; comment and uncomment region
 (global-set-key (kbd "s-/") 'comment-region)
 (global-set-key (kbd "s-.") 'uncomment-region)
@@ -43,12 +52,15 @@
 
 ; backwards word kill
 (global-set-key "\C-w" 'backward-kill-word)
-(global-set-key "\C-q" 'kill-word)
+(global-set-key "\C-q" 'quoted-insert)
 (global-set-key "\C-x\C-k" 'kill-region)
 (global-set-key "\C-c\C-k" 'kill-region)
 
 ; magit
 (global-set-key (kbd "<f8>") 'magit-status)
+
+(global-set-key (kbd "M-s") 'replace-string)
+(global-set-key (kbd "C-M-s") 'replace-regex)
 
 ; nrepl
 (global-set-key (kbd "<f10>") 'nrepl-jack-in)

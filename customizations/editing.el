@@ -11,10 +11,19 @@
 (require 'autopair)
 (autopair-global-mode) ;; enable autopair in all buffers
 
+(require 'auto-complete)
+
 ; yes, I want to kill buffers with processes attached
 (setq kill-buffer-query-functions
   (remq 'process-kill-buffer-query-function
          kill-buffer-query-functions))
+
+;; start robe mode with ruby
+(require 'robe)
+(add-hook 'ruby-mode-hook 'robe-mode)
+(add-hook 'robe-mode-hook 'ac-robe-setup)
+(global-company-mode t)
+(push 'company-robe company-backends)
 
 ; use ibuffer instead
 (defalias 'list-buffers 'ibuffer)
@@ -44,11 +53,15 @@
  'ruby-mode
  '(("\\(\\b\\sw[_a-zA-Z0-9]*:\\)\\(?:\\s-\\|$\\)" (1 font-lock-constant-face))))
 
+;; call 'gofmt' on save
+(setq exec-path (cons "/usr/local/go/bin" exec-path))
+(add-to-list 'exec-path "/Users/daniel/Development/gocode/bin")
+(add-hook 'before-save-hook 'gofmt-before-save)
 
-;; Complete by C-c .
-(add-hook 'ruby-mode-hook
-      (lambda ()
-	(local-set-key (kbd "C-c .") 'ac-complete-rsense)))
+;; ;; Complete by C-c .
+;; (add-hook 'ruby-mode-hook
+;;       (lambda ()
+;; 	(local-set-key (kbd "C-c .") 'ac-complete-rsense)))
 
 ; prevent scss compile-on-save
 (setq scss-compile-at-save nil)

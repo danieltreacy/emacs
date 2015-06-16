@@ -1,10 +1,10 @@
 ;; kill all other buffers
 (defun kill-other-buffers ()
-    "Kill all other buffers."
-    (interactive)
-    (mapc 'kill-buffer
-          (delq (current-buffer)
-                (remove-if-not 'buffer-file-name (buffer-list)))))
+  "Kill all other buffers."
+  (interactive)
+  (mapc 'kill-buffer
+        (delq (current-buffer)
+              (remove-if-not 'buffer-file-name (buffer-list)))))
 
 ;; set paths
 (defun set-exec-path-from-shell-PATH ()
@@ -16,31 +16,45 @@ This is particularly useful under Mac OSX, where GUI apps are not started from a
     (setenv "PATH" path-from-shell)
     (setq exec-path (split-string path-from-shell path-separator))))
 
+;; set Go path
+(setenv "GOPATH" "/Users/daniel/Development/gocode")
+
+;; go mode hook for MX-compile
+(defun my-go-mode-hook ()
+  ; Call Gofmt before saving
+  (add-hook 'before-save-hook 'gofmt-before-save)
+  ; Customize compile command to run go build
+  (if (not (string-match "go" compile-command))
+      (set (make-local-variable 'compile-command)
+           "go generate && go build -v && go test -v && go vet"))
+  ; Godef jump key binding
+  (local-set-key (kbd "M-.") 'godef-jump))
+(add-hook 'go-mode-hook 'my-go-mode-hook)
 
 (defun set-rbenv-path ()
   (setenv "PATH" (concat (getenv "HOME") "/.rbenv/shims:" (getenv "HOME") "/.rbenv/bin:" (getenv "PATH")))
   (setq exec-path (cons (concat (getenv "HOME") "/.rbenv/shims") (cons (concat (getenv "HOME") "/.rbenv/bin") exec-path))))
 
 (defun unwrap-line ()
-      "Remove all newlines until we get to two consecutive ones.
+  "Remove all newlines until we get to two consecutive ones.
     Or until we reach the end of the buffer.
     Great for unwrapping quotes before sending them on IRC."
-      (interactive)
-      (let ((start (point))
-            (end (copy-marker (or (search-forward "\n\n" nil t)
-                                  (point-max))))
-            (fill-column (point-max)))
-        (fill-region start end)
-        (goto-char end)
-        (newline)
-        (goto-char start)))
+  (interactive)
+  (let ((start (point))
+        (end (copy-marker (or (search-forward "\n\n" nil t)
+                              (point-max))))
+        (fill-column (point-max)))
+    (fill-region start end)
+    (goto-char end)
+    (newline)
+    (goto-char start)))
 
 (defun my-toggle-fullscreen ()
   "Toggle full screen"
   (interactive)
   (set-frame-parameter
-     nil 'fullscreen
-     (when (not (frame-parameter nil 'fullscreen)) 'fullboth)))
+   nil 'fullscreen
+   (when (not (frame-parameter nil 'fullscreen)) 'fullboth)))
 
 
 ;; See http://bzg.fr/emacs-hide-mode-line.html
@@ -93,3 +107,48 @@ This is particularly useful under Mac OSX, where GUI apps are not started from a
           header-line-format nil))
   (set-window-buffer nil (current-buffer)))
 (global-set-key (kbd "C-s-SPC") 'mode-line-in-header)
+
+;; Ruby Eval, Ben Eills
+(defun ruby-eval-region()
+  "Prints the evaluation of Ruby statements in region to a new output buffer"
+  (interactive)
+  (let ((output-buffer "Ruby Output"))
+    (shell-command-on-region (mark) (point) "ruby" output-buffer)
+    (switch-to-buffer output-buffer)))
+
+(defun ruby-pretty-print()
+  "Pretty prints the evaluation of a Ruby expression in region to a new output buffer"
+  (interactive)
+  (save-excursion
+    (let ((code (buffer-substring (mark) (point)))
+          (code-buffer (generate-new-buffer "ruby-code")))
+      (switch-to-buffer code-buffer)
+      (insert (concat "require 'pp'\nputs (" code ")\n"))
+      (mark-whole-buffer)
+      (ruby-eval-region)
+      (kill-buffer code-buffer))))
+
+(defun toggle-window-split ()
+  (interactive)
+  (if (= (count-windows) 2)
+      (let* ((this-win-buffer (window-buffer))
+	     (next-win-buffer (window-buffer (next-window)))
+	     (this-win-edges (window-edges (selected-window)))
+	     (next-win-edges (window-edges (next-window)))
+	     (this-win-2nd (not (and (<= (car this-win-edges)
+					 (car next-win-edges))
+				     (<= (cadr this-win-edges)
+					 (cadr next-win-edges)))))
+	     (splitter
+	      (if (= (car this-win-edges)
+		     (car (window-edges (next-window))))
+		  'split-window-horizontally
+		'split-window-vertically)))
+	(delete-other-windows)
+	(let ((first-win (selected-window)))
+	  (funcall splitter)
+	  (if this-win-2nd (other-window 1))
+	  (set-window-buffer (selected-window) this-win-buffer)
+	  (set-window-buffer (next-window) next-win-buffer)
+	  (select-window first-win)
+	  (if this-win-2nd (other-window 1))))))
