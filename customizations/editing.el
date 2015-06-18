@@ -77,6 +77,7 @@
 (setq tab-width 2)
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 2)
+(setq js-indent-level 2)
 
 ; line spacing
 (setq-default line-spacing 5)

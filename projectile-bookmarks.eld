@@ -1,1 +1,1 @@
-("~/.emacs.d/" "~/vms/lucyv2/app/giganta/" "~/vms/lucy-gmail/" "~/vms/millbrae/" "~/vms/lucyv2/web/lucy/" "~/vms/lucy/" "~/vms/lucyv2/app/cyclops/" "~/vms/lucyv2/app/ripatron/" "~/dev/gitlogger/")
+("~/.emacs.d/" "~/vms/lucy-gmail/" "~/vms/lucyv2/app/giganta/" "~/vms/millbrae/" "~/vms/lucyv2/web/lucy/" "~/vms/lucy/" "~/vms/lucyv2/app/cyclops/" "~/vms/lucyv2/app/ripatron/" "~/dev/gitlogger/")
