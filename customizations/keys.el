@@ -63,7 +63,7 @@
 (global-set-key (kbd "C-M-s") 'replace-regex)
 
 ; nrepl
-(global-set-key (kbd "<f10>") 'nrepl-jack-in)
+;;(global-set-key (kbd "<f10>") 'nrepl-jack-in)
 
 ; fullscreen!
 (global-set-key [(super return)] 'ns-toggle-fullscreen)

@@ -16,17 +16,17 @@
 (add-to-list 'load-path "~/.emacs.d/vendor/malabar-1.5/lisp")
 
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/jde/lisp"))
-(add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/eieio"))
-(add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/cedet/common"))
+;;(add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/eieio"))
+;;(add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/cedet/common"))
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/elib"))
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/molokai"))
-(add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/scala-mode2"))
-(add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/textmate"))
-(add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/textmate"))
-(add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/multiple-cursors"))
-(add-to-list 'custom-theme-load-path "~/.emacs.d/vendor/noctilux-theme")
-(add-to-list 'custom-theme-load-path "~/.emacs.d/vendor/anti-zenburn")
-(add-to-list 'custom-theme-load-path "~/.emacs.d/vendor/hipster-theme")
+;;(add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/scala-mode2"))
+;;(add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/textmate"))
+;;(add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/textmate"))
+;;(add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/multiple-cursors"))
+;;(add-to-list 'custom-theme-load-path "~/.emacs.d/vendor/noctilux-theme")
+;;(add-to-list 'custom-theme-load-path "~/.emacs.d/vendor/anti-zenburn")
+;;(add-to-list 'custom-theme-load-path "~/.emacs.d/vendor/hipster-theme")
 ;; ;; autocomplete
 ;; (add-to-list 'load-path "~/.emacs.d/vendor")
 ;; (require 'auto-complete-config)
@@ -58,25 +58,25 @@
 ;;(require 'yaml-mode)
 
 ;; load cedet packages
-(load-file (expand-file-name "~/.emacs.d/vendor/cedet/common/cedet.el"))
-(semantic-load-enable-minimum-features) ;; or enable more if you wish
+;;(load-file (expand-file-name "~/.emacs.d/vendor/cedet/common/cedet.el"))
+;;(semantic-load-enable-minimum-features) ;; or enable more if you wish
 (require 'malabar-mode)
 (setq malabar-groovy-lib-dir "~/.emacs.d/vendor/malabar-1.5/lib")
 (add-to-list 'auto-mode-alist '("\\.java\\'" . malabar-mode))
 
 ;; textmate mode
-(require 'textmate)
-(textmate-mode)
+;;(require 'textmate)
+;;(textmate-mode)
 
 ;; ensime
 (require 'ensime)
 
 ;; scala-mode
-(require 'scala-mode2)
+;;(require 'scala-mode2)
 
 ;; multiple cursors
 ;;(load-file (expand-file-name "~/.emacs.d/vendor/multiple-cursors/multiple-cursors.el"))
-(require 'multiple-cursors)
+;;(require 'multiple-cursors)
 
 ;; packages
 (require 'package)
@@ -155,5 +155,5 @@
  '(flymake-errline ((t :underline "red")) t)
  '(flymake-warnline ((t :underline "green")) t))
 
-(load-file "~/.emacs.d/elpa/magit-1.2.0/magit.el")
+;;(load-file "~/.emacs.d/elpa/magit-1.2.0/magit.el")
 (put 'dired-find-alternate-file 'disabled nil)

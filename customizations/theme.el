@@ -8,7 +8,7 @@
 ; fontify any future frames
 (push 'fontify-frame after-make-frame-functions)
 
-(require 'color-theme)
+;;(require 'color-theme)
 
 ;(color-theme-clarity)
 ;(load-file "~/.emacs.d/vendor/molokai/molokai.el")
