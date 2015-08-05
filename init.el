@@ -65,8 +65,8 @@
 (add-to-list 'auto-mode-alist '("\\.java\\'" . malabar-mode))
 
 ;; textmate mode
-;;(require 'textmate)
-;;(textmate-mode)
+(require 'textmate)
+(textmate-mode)
 
 ;; ensime
 (require 'ensime)
