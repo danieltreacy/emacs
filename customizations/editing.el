@@ -148,6 +148,7 @@
 
 ;; magit stuff
 (autoload 'magit-status "magit" nil t)
+(setq magit-push-always-verify nil)
 
 ;; markdown mode hook
 (defun set-markdown-mode ()
