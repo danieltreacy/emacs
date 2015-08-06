@@ -8,8 +8,8 @@
 
 ;; use autopair
 (add-to-list 'load-path "~/.emacs.d/vendor/autopair") ;; comment if autopair.el is in standard load path
-(require 'autopair)
-(autopair-global-mode) ;; enable autopair in all buffers
+;;(require 'autopair)
+;;(autopair-global-mode) ;; enable autopair in all buffers
 
 (require 'auto-complete)
 
