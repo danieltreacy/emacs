@@ -10,7 +10,7 @@
 (require 'cl)
 
 ;; load paths
-(add-to-list 'load-path "~/.emacs.d/")
+;;(add-to-list 'load-path "~/.emacs.d/")
 (add-to-list 'load-path "~/.emacs.d/customizations")
 (add-to-list 'load-path "~/.emacs.d/vendor/ensime/ensime_2.9.1-0.7.6/elisp/")
 (add-to-list 'load-path "~/.emacs.d/vendor/malabar-1.5/lisp")
@@ -65,8 +65,8 @@
 (add-to-list 'auto-mode-alist '("\\.java\\'" . malabar-mode))
 
 ;; textmate mode
-(require 'textmate)
-(textmate-mode)
+;;(require 'textmate)
+;;(textmate-mode)
 
 ;; ensime
 (require 'ensime)
