@@ -1,6 +1,6 @@
 ; nice font
 (defun fontify-frame (frame)
-  (set-frame-parameter frame 'font "Inconsolata 14"))
+  (set-frame-parameter frame 'font "Monaco 12"))
 
 ; fontify current frame
 (fontify-frame nil)
