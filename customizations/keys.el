@@ -49,10 +49,13 @@
 ; override forward symbol
 (global-set-key (kbd "M-f") 'forward-word)
 (global-set-key (kbd "M-b") 'backward-word)
+; word movement that is easier on a split keyboard
+(global-set-key (kbd "M-d") 'forward-word)
+(global-set-key (kbd "M-e") 'backward-word)
 
 ; backwards word kill
 (global-set-key "\C-w" 'backward-kill-word)
-(global-set-key "\C-q" 'quoted-insert)
+;(global-set-key "\C-q" 'quoted-insert)
 (global-set-key "\C-x\C-k" 'kill-region)
 (global-set-key "\C-c\C-k" 'kill-region)
 

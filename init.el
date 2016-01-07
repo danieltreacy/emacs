@@ -21,8 +21,7 @@
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/elib"))
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/molokai"))
 ;;(add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/scala-mode2"))
-;;(add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/textmate"))
-;;(add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/textmate"))
+(add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/textmate"))
 ;;(add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/multiple-cursors"))
 ;;(add-to-list 'custom-theme-load-path "~/.emacs.d/vendor/noctilux-theme")
 ;;(add-to-list 'custom-theme-load-path "~/.emacs.d/vendor/anti-zenburn")
@@ -65,8 +64,8 @@
 (add-to-list 'auto-mode-alist '("\\.java\\'" . malabar-mode))
 
 ;; textmate mode
-;;(require 'textmate)
-;;(textmate-mode)
+(require 'textmate)
+(textmate-mode)
 
 ;; ensime
 (require 'ensime)

@@ -1,6 +1,6 @@
 ; nice font
 (defun fontify-frame (frame)
-  (set-frame-parameter frame 'font "Monaco 12"))
+  (set-frame-parameter frame 'font "Courier New 14"))
 
 ; fontify current frame
 (fontify-frame nil)
@@ -21,7 +21,7 @@
 
 ;(color-theme-charcoal-black)
 
-;(load-theme 'solarized-light t)
+(load-theme 'solarized-dark t)
 
 ;(color-theme-sons-of-obsidian)
 
@@ -33,7 +33,7 @@
 
 ;; (load-theme 'dakrone t)
 
-(load-theme 'base16-google-dark t)
+;(load-theme 'base16-google-dark t)
 
 ;(load-file "~/.emacs.d/vendor/subtle-hacker-theme/subtle-hacker-theme.el")
 ;(load-theme 'subtle-hacker)
