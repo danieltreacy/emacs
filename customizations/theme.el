@@ -1,6 +1,6 @@
 ; nice font
 (defun fontify-frame (frame)
-  (set-frame-parameter frame 'font "Courier New 14"))
+  (set-frame-parameter frame 'font "Inconsolata 13"))
 
 ; fontify current frame
 (fontify-frame nil)
@@ -8,7 +8,7 @@
 ; fontify any future frames
 (push 'fontify-frame after-make-frame-functions)
 
-;;(require 'color-theme)
+(require 'color-theme)
 
 ;(color-theme-clarity)
 ;(load-file "~/.emacs.d/vendor/molokai/molokai.el")
@@ -21,7 +21,7 @@
 
 ;(color-theme-charcoal-black)
 
-(load-theme 'solarized-dark t)
+;(load-theme 'atom-dark t)
 
 ;(color-theme-sons-of-obsidian)
 
@@ -30,6 +30,8 @@
 
 ;(load-file "~/.emacs.d/vendor/pastels-on-dark-theme/pastels-on-dark-theme.el")
 ;(load-theme 'pastels-on-dark t)
+
+(load-theme 'twilight t)
 
 ;; (load-theme 'dakrone t)
 

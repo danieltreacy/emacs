@@ -56,6 +56,8 @@
 ;;(load-file (expand-file-name "~/.emacs.d/elpa/yaml-mode-0.0.7/yaml-mode.el"))
 ;;(require 'yaml-mode)
 
+(load-file (expand-file-name "~/.emacs.d/vendor/logtalk/logtalk.el"))
+
 ;; load cedet packages
 ;;(load-file (expand-file-name "~/.emacs.d/vendor/cedet/common/cedet.el"))
 ;;(semantic-load-enable-minimum-features) ;; or enable more if you wish
@@ -102,7 +104,7 @@
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
    (quote
-    ("01d8c9140c20e459dcc18addb6faebd7803f7d6c46d626c7966d3f18284c4502" "6ebb2401451dc6d01cd761eef8fe24812a57793c5ccc427b600893fa1d767b1d" "3539b3cc5cbba41609117830a79f71309a89782f23c740d4a5b569935f9b7726" "d72836155cd3b3e52fd86a9164120d597cbe12a67609ab90effa54710b2ac53b" "5d8caed7f4ed8929fd79e863de3a38fbb1aaa222970b551edfd2e84552fec020" "113ae6902d98261317b5507e55ac6e7758af81fc4660c34130490252640224a2" "e16a771a13a202ee6e276d06098bc77f008b73bbac4d526f160faa2d76c1dd0e" "ee17bcdaa3ce2c5b287dff4d4c1da13f45bfa2f1aa9e11ff0bbbebb2e6be79c5" "d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" "dd4db38519d2ad7eb9e2f30bc03fba61a7af49a185edfd44e020aa5345e3dca7" "2a366939c7ae86b622f8d28d2d58c89f7a83d4d80cc945bc2f92ba48d7bac3ea" "08efabe5a8f3827508634a3ceed33fa06b9daeef9c70a24218b70494acdf7855" "8d6fb24169d94df45422617a1dfabf15ca42a97d594d28b3584dc6db711e0e0b" "e74d80bf86c7951b1a27994faa417f7e3b4a02f7a365ed224f032bd29f5d2d6d" "0c311fb22e6197daba9123f43da98f273d2bfaeeaeb653007ad1ee77f0003037" "49eea2857afb24808915643b1b5bd093eefb35424c758f502e98a03d0d3df4b1" "a1493957ee779057acdc4c337133f217dd7b2edfdeeffed903ba2f16246f665a" "5bd5af0deb1ab0e2c1b9c54d94a3f030529b6c7034fdf0d3cc4b0e7e0338cb91" "30fe7e72186c728bd7c3e1b8d67bc10b846119c45a0f35c972ed427c45bacc19" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" default)))
+    ("51e228ffd6c4fff9b5168b31d5927c27734e82ec61f414970fc6bcce23bc140d" "2e5705ad7ee6cfd6ab5ce81e711c526ac22abed90b852ffaf0b316aa7864b11f" "1abda075ebacaa3795d675bb2be0a905322ac856f9c0c259da63f9ccfe1962ec" "0240d45644b370b0518e8407f5990a243c769fb0150a7e74297e6f7052a04a72" "50bfaa1e09c73a6832a4178812ca76ec673ba94f022bdea885dc679d4f472580" "9c22be8846bce5d64c803b1f7f4051f0675ba7c0eb492e03a17bb765b0a35d82" "a1289424bbc0e9f9877aa2c9a03c7dfd2835ea51d8781a0bf9e2415101f70a7e" "3ff96689086ebc06f5f813a804f7114195b7c703ed2f19b51e10026723711e33" "e8a9dfa28c7c3ae126152210e3ccc3707eedae55bdc4b6d3e1bb3a85dfb4e670" "01d8c9140c20e459dcc18addb6faebd7803f7d6c46d626c7966d3f18284c4502" "6ebb2401451dc6d01cd761eef8fe24812a57793c5ccc427b600893fa1d767b1d" "3539b3cc5cbba41609117830a79f71309a89782f23c740d4a5b569935f9b7726" "d72836155cd3b3e52fd86a9164120d597cbe12a67609ab90effa54710b2ac53b" "5d8caed7f4ed8929fd79e863de3a38fbb1aaa222970b551edfd2e84552fec020" "113ae6902d98261317b5507e55ac6e7758af81fc4660c34130490252640224a2" "e16a771a13a202ee6e276d06098bc77f008b73bbac4d526f160faa2d76c1dd0e" "ee17bcdaa3ce2c5b287dff4d4c1da13f45bfa2f1aa9e11ff0bbbebb2e6be79c5" "d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" "dd4db38519d2ad7eb9e2f30bc03fba61a7af49a185edfd44e020aa5345e3dca7" "2a366939c7ae86b622f8d28d2d58c89f7a83d4d80cc945bc2f92ba48d7bac3ea" "08efabe5a8f3827508634a3ceed33fa06b9daeef9c70a24218b70494acdf7855" "8d6fb24169d94df45422617a1dfabf15ca42a97d594d28b3584dc6db711e0e0b" "e74d80bf86c7951b1a27994faa417f7e3b4a02f7a365ed224f032bd29f5d2d6d" "0c311fb22e6197daba9123f43da98f273d2bfaeeaeb653007ad1ee77f0003037" "49eea2857afb24808915643b1b5bd093eefb35424c758f502e98a03d0d3df4b1" "a1493957ee779057acdc4c337133f217dd7b2edfdeeffed903ba2f16246f665a" "5bd5af0deb1ab0e2c1b9c54d94a3f030529b6c7034fdf0d3cc4b0e7e0338cb91" "30fe7e72186c728bd7c3e1b8d67bc10b846119c45a0f35c972ed427c45bacc19" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" default)))
  '(fci-rule-color "#eee8d5")
  '(highlight-changes-colors (quote ("#d33682" "#6c71c4")))
  '(highlight-tail-colors
@@ -149,10 +151,10 @@
  '(diff-header ((((class color) (min-colors 88) (background dark)) (:foreground "RoyalBlue1"))))
  '(diff-hunk-header ((t (:foreground "#fbde2d"))))
  '(diff-nonexistent ((t (:inherit diff-file-header :strike-through nil))))
- '(diff-refine-change ((((class color) (min-colors 88) (background dark)) (:background "#182042"))))
+ '(diff-refine-change ((((class color) (min-colors 88) (background dark)) (:background "#182042"))) t)
  '(diff-removed ((t (:foreground "#de1923"))))
- '(flymake-errline ((t :underline "red")) t)
- '(flymake-warnline ((t :underline "green")) t))
+ '(flymake-errline ((t :underline "red")))
+ '(flymake-warnline ((t :underline "green"))))
 
 ;;(load-file "~/.emacs.d/elpa/magit-1.2.0/magit.el")
 (put 'dired-find-alternate-file 'disabled nil)
