@@ -62,9 +62,6 @@
 (global-set-key (kbd "M-s") 'replace-string)
 (global-set-key (kbd "C-M-s") 'replace-regex)
 
-; nrepl
-(global-set-key (kbd "<f10>") 'nrepl-jack-in)
-
 ; fullscreen!
 (global-set-key [(super return)] 'ns-toggle-fullscreen)
 
@@ -73,9 +70,6 @@
 
 ; kill all other buffers except current
 (global-set-key (kbd "<f6>") 'kill-other-buffers)
-
-; clear textmate-mode cache
-(global-set-key (kbd "<f5>") 'textmate-clear-cache)
 
 ;; indent whole buffer
 (defun iwb ()

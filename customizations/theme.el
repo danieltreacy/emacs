@@ -1,6 +1,6 @@
 ; nice font
 (defun fontify-frame (frame)
-  (set-frame-parameter frame 'font "Inconsolata 14"))
+  (set-frame-parameter frame 'font "SF Mono 12"))
 
 ; fontify current frame
 (fontify-frame nil)
@@ -8,7 +8,9 @@
 ; fontify any future frames
 (push 'fontify-frame after-make-frame-functions)
 
-(require 'color-theme)
+;(require 'color-theme)
+
+(color-theme-sanityinc-tomorrow-eighties)
 
 ;(color-theme-clarity)
 ;(load-file "~/.emacs.d/vendor/molokai/molokai.el")
@@ -28,15 +30,12 @@
 ;; (load-file "~/.emacs.d/vendor/tomorrow-theme/color-theme-tomorrow.el")
 ;; (color-theme-tomorrow-night)
 
-;(load-file "~/.emacs.d/vendor/pastels-on-dark-theme/pastels-on-dark-theme.el")
-;(load-theme 'pastels-on-dark t)
+;;(load-file "~/.emacs.d/vendor/pastels-on-dark-theme/pastels-on-dark-theme.el")
+;;(load-theme 'pastels-on-dark t)
 
 ;; (load-theme 'dakrone t)
 
-(load-theme 'base16-google-dark t)
-
-;(load-file "~/.emacs.d/vendor/subtle-hacker-theme/subtle-hacker-theme.el")
-;(load-theme 'subtle-hacker)
+;;(load-theme 'base16-google-dark t)
 
 ;(load-file "~/.emacs.d/elpa/color-theme-heroku-1.0.0/color-theme-heroku.el")
 
